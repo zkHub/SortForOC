@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A1C6BA01BD73BE8004C0F86 /* CoreSpotlight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A1C6B9F1BD73BE8004C0F86 /* CoreSpotlight.framework */; };
+		0A1C6BA21BD73BF9004C0F86 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A1C6BA11BD73BF9004C0F86 /* MobileCoreServices.framework */; };
+		0A1C6BA41BD73ED7004C0F86 /* 10.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A1C6BA31BD73ED7004C0F86 /* 10.png */; settings = {ASSET_TAGS = (); }; };
 		0AD595491BCF529A0075E014 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD595481BCF529A0075E014 /* main.m */; };
 		0AD5954C1BCF529A0075E014 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD5954B1BCF529A0075E014 /* AppDelegate.m */; };
 		0AD5954F1BCF529A0075E014 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD5954E1BCF529A0075E014 /* ViewController.m */; };
@@ -35,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A1C6B9F1BD73BE8004C0F86 /* CoreSpotlight.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreSpotlight.framework; path = System/Library/Frameworks/CoreSpotlight.framework; sourceTree = SDKROOT; };
+		0A1C6BA11BD73BF9004C0F86 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		0A1C6BA31BD73ED7004C0F86 /* 10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 10.png; sourceTree = "<group>"; };
 		0AD595441BCF52990075E014 /* SortForOC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SortForOC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AD595481BCF529A0075E014 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0AD5954A1BCF529A0075E014 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -58,6 +64,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A1C6BA21BD73BF9004C0F86 /* MobileCoreServices.framework in Frameworks */,
+				0A1C6BA01BD73BE8004C0F86 /* CoreSpotlight.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +89,8 @@
 		0AD5953B1BCF52990075E014 = {
 			isa = PBXGroup;
 			children = (
+				0A1C6BA11BD73BF9004C0F86 /* MobileCoreServices.framework */,
+				0A1C6B9F1BD73BE8004C0F86 /* CoreSpotlight.framework */,
 				0AD595461BCF52990075E014 /* SortForOC */,
 				0AD595601BCF529A0075E014 /* SortForOCTests */,
 				0AD5956B1BCF529A0075E014 /* SortForOCUITests */,
@@ -101,6 +111,7 @@
 		0AD595461BCF52990075E014 /* SortForOC */ = {
 			isa = PBXGroup;
 			children = (
+				0A1C6BA31BD73ED7004C0F86 /* 10.png */,
 				0AD5954A1BCF529A0075E014 /* AppDelegate.h */,
 				0AD5954B1BCF529A0075E014 /* AppDelegate.m */,
 				0AD5954D1BCF529A0075E014 /* ViewController.h */,
@@ -248,6 +259,7 @@
 			files = (
 				0AD595571BCF529A0075E014 /* LaunchScreen.storyboard in Resources */,
 				0AD595541BCF529A0075E014 /* Assets.xcassets in Resources */,
+				0A1C6BA41BD73ED7004C0F86 /* 10.png in Resources */,
 				0AD595521BCF529A0075E014 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -499,6 +511,7 @@
 				0AD595731BCF529A0075E014 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0AD595741BCF529A0075E014 /* Build configuration list for PBXNativeTarget "SortForOCTests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +520,7 @@
 				0AD595761BCF529A0075E014 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0AD595771BCF529A0075E014 /* Build configuration list for PBXNativeTarget "SortForOCUITests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +529,7 @@
 				0AD595791BCF529A0075E014 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
