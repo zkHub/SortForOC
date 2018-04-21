@@ -20,17 +20,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
-    NSURLSession *session = [NSURLSession sharedSession];
-    NSString *string = @"http://testchat.client.3g.fang.com/HttpSendMessageByXF?command=xf_notice&form=新房帮小秘书&housetype=xiaomishu&housetitle=您有{test-苹果汇}的客户&message=您好，{test-苹果汇}的客户：{400来电4453}（156****4453）已下单，快去抢客户吧！&msgContent=82563&sendto=x:esf-seco83300834&purpose=qdds_qiangdan&u=xf_common&vc=704274e970f77800211b4ffbf5e323be";
-    
-    NSURL *url = [NSURL URLWithString:[string stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-//    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-    NSURLSessionTask *task = [session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        NSLog(@"%@",data);
-    }];
-    
-    [task resume];
+//    
+//    NSURLSession *session = [NSURLSession sharedSession];
+//    NSString *string = @"http://testchat.client.3g.fang.com/HttpSendMessageByXF?command=xf_notice&form=新房帮小秘书&housetype=xiaomishu&housetitle=您有{test-苹果汇}的客户&message=您好，{test-苹果汇}的客户：{400来电4453}（156****4453）已下单，快去抢客户吧！&msgContent=82563&sendto=x:esf-seco83300834&purpose=qdds_qiangdan&u=xf_common&vc=704274e970f77800211b4ffbf5e323be";
+//    
+//    NSURL *url = [NSURL URLWithString:[string stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+////    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+//    NSURLSessionTask *task = [session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+//        NSLog(@"%@",data);
+//    }];
+//    
+//    [task resume];
 
     
     self.myLabel.text = @"sdflkjsdfsdfsdfdsfdsfsdsfsdf";
@@ -57,9 +57,9 @@
     
     NSMutableArray *array = [NSMutableArray arrayWithArray:@[@5,@3,@1,@0,@7,@9,@4,@6,@2,@8]];
     
-    [self bubbleSortForArray:array];
-//    NSMutableArray *tempArray = [NSMutableArray arrayWithCapacity:array.count];
-//    [self mergeSortForArray:array tempArray:tempArray start:0 end:array.count - 1];
+//    [self bubbleSortForArray:array];
+    NSMutableArray *tempArray = [NSMutableArray arrayWithCapacity:array.count];
+    [self mergeSortForArray:array tempArray:tempArray start:0 end:array.count - 1];
 //    [self quickSortForArray:array left:0 right:array.count-1];
     
     NSInteger index = [self binarySearchFromArray:array withObject:2 low:0 high:array.count - 1];
@@ -69,11 +69,13 @@
         NSLog(@"%d",[num intValue]);
     }
     
+    
 }
 
 #pragma mark --二分查找
 /**
  *  二分查找
+ 二分查找又称折半查找，优点是比较次数少，查找速度快，平均性能好；其缺点是要求待查表为有序表，且插入删除困难。因此，折半查找方法适用于不经常变动而查找频繁的有序列表。
  */
 -(NSInteger)binarySearchFromArray:(NSArray*)array withObject:(NSInteger)key low:(NSInteger)low high:(NSInteger)high{
     
@@ -100,13 +102,34 @@
 -(void)bubbleSortForArray:(NSMutableArray*)array{
     
     for (int j = 0; j < array.count - 1; j++) {
+        BOOL flag = YES;
         for (int i = 0; i < array.count - 1 - j; i++) {
             if (array[i] > array[i+1]) {
                 [array exchangeObjectAtIndex:i withObjectAtIndex:i+1];
+                flag = NO;
             }
         }
+        if (flag) break;
     }
     
+}
+
+#pragma mark --选择排序
+/**
+ *  选择排序
+ */
+- (void)selectSortForArray:(NSMutableArray*)array {
+    for (int i = 0; i < array.count-1; i++) {
+        NSInteger min = i;
+        for (int j = i+1; j < array.count; j++) {
+            if (array[min] >= array[j]) {
+                min = j;
+            }
+        }
+        if (min != i) {
+            [array exchangeObjectAtIndex:i withObjectAtIndex:min];
+        }
+    }
 }
 
 
